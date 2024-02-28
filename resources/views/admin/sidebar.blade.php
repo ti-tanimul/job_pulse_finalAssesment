@@ -92,14 +92,15 @@
                     </li>
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
-                            <span class="nav-label">Tables</span><i class="fa fa-angle-left arrow"></i></a>
+                            <span class="nav-label">About</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="table_basic.html">Basic Tables</a>
+                                <a href="{{ route('about') }}">About Form</a>
                             </li>
                             <li>
-                                <a href="datatables.html">Datatables</a>
+                                <a href="{{ route('blog') }}">Blog</a>
                             </li>
+                            
                         </ul>
                     </li>
                     <li>

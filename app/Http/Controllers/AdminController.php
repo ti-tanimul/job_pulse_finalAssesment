@@ -32,6 +32,7 @@ class AdminController extends Controller
         ]);
         return redirect()->back()->with('success', 'Insert successfully!');
     }
+    
     public function job_type(){
         return view("admin.job-type");
     }
