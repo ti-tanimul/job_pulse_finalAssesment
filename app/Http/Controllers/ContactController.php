@@ -42,4 +42,44 @@ class ContactController extends Controller
         ]);
         return redirect()->back()->with('success', 'Insert successfully!');
     }
+
+    public function contactList(){
+        $contactsList = Contact::all();
+        return view('admin.manage-contact-list', compact('contactsList'));
+    }
+    public function contactListDelete($id){
+        $deleteImage = Contact::find($id);
+        $deleteImage->delete();
+        return redirect('admin/manage-contact')->with('success', 'Content Delete Successfully');
+    }
+
+    public function manageContact(){
+        $contacts = ContactUs::all();
+        return view('admin.manage-contact', compact('contacts'));
+    }
+    public function editContact($id){
+        $content = ContactUs::find($id);
+        return view('admin.edit-contact', compact('content'));  
+    }
+
+    public function updateContact(Request $request, $id){
+
+        $content = ContactUs::find($id);
+        $request->validate([
+            'location' => 'required',
+            'email' => 'required',
+            'mobile' => 'required'
+        ]);
+        ContactUs::where('id', $id)->update([
+            'location' => $request->location,
+            'email' => $request->email,
+            'mobile' => $request->mobile
+        ]);
+        return redirect('manage-contact')->with('success', 'Content Update Successfully');
+    }
+    public function deleteContact($id){
+        $deleteImage = ContactUs::find($id);
+        $deleteImage->delete();
+        return redirect('admin/manage-contact')->with('success', 'Content Delete Successfully');
+    }
 }

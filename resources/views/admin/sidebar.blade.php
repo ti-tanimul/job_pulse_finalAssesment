@@ -85,7 +85,10 @@
                                 <a href="{{ route('contact') }}">Contact Us</a>
                             </li>
                             <li>
-                                <a href="">Contact Form</a>
+                                <a href="{{ route('manage-contact') }}">ContactUs Manage</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('contact-list') }}">Contact List</a>
                             </li>
                             
                         </ul>
@@ -98,7 +101,13 @@
                                 <a href="{{ route('about') }}">About Form</a>
                             </li>
                             <li>
+                                <a href="{{ route('manage-about') }}">Manage</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('blog') }}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('manage-blog') }}">Manage</a>
                             </li>
                             
                         </ul>

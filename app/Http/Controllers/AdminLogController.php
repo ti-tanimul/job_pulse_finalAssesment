@@ -23,7 +23,7 @@ class AdminLogController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'type'=> 2,
+            'type'=> 1,
         ]);
         return redirect()->back()->with('success', 'Insert Completed Successfully!');
     }
@@ -34,7 +34,7 @@ class AdminLogController extends Controller
         $adminlog = [
             'email' => $request->email,
             'password' => $request->password,
-            'type' => 2,
+            'type' => 1,
         ];
         if(Auth::attempt($adminlog)){
             return redirect('/dashboard')->with('msg', 'Login Success');
