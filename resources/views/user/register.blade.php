@@ -48,7 +48,9 @@
                                 <button type="submit" class="btn btn-primary">Register</button>
                               </form>
                               <br>
-                              <div class="btn btn-outline-success" ><a href="{{ route('user-login') }}">Login</a></div>
+                              <div class="btn btn-outline-success" ><a href="{{ route('user-login') }}">Login</a>
+                                </div>
+                                <p>Have Account</p>
                         </div>
                     </div>
                 </div>

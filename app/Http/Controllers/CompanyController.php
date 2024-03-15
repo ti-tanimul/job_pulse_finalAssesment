@@ -8,10 +8,19 @@ use App\Models\Circular;
 
 class CompanyController extends Controller
 {
+    public function index(){
+        return view("company.company-dashboard");
+    }
+    public function home(){
+        return view("company.company-menu");
+    }
+
+
     public function company_circular(){
         $categorys = JobCategory::all();
         return view("company.home", compact('categorys'));
     }
+    
     public function store_circular(Request $request){
         $request->validate([
             'c_name' => 'required',

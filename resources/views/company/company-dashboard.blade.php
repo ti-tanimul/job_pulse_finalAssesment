@@ -1,13 +1,14 @@
+@include('admin.header')
 <body class="fixed-navbar">
     <div class="page-wrapper">
         <!-- START HEADER-->
         <header class="header">
             <div class="page-brand">
                 <a class="link" href="index.html">
-                    <span class="brand">Admin
-                        <span class="brand-tip">CAST</span>
+                    <span class="brand">Company
+                        <span class="brand-tip">Dashboard</span>
                     </span>
-                    <span class="brand-mini">AC</span>
+                    <span class="brand-mini">CD</span>
                 </a>
             </div>
             <div class="flexbox flex-1">
@@ -67,46 +68,14 @@
                             <span class="nav-label">Home</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="{{ route('banner') }}">Banner</a>
+                                <a href="{{ route('company-home') }}">Home</a>
                             </li>
                             <li>
-                                <a href="{{ route('job_type') }}">Job Type</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;"><i class="sidebar-item-icon fa fa-edit"></i>
-                            <span class="nav-label">Contact</span><i class="fa fa-angle-left arrow"></i></a>
-                        <ul class="nav-2-level collapse">
-                            <li>
-                                <a href="{{ route('contact') }}">Contact Us</a>
+                                <a href="">Job Type</a>
                             </li>
                             <li>
-                                <a href="{{ route('manage-contact') }}">ContactUs Manage</a>
+                                <a href="{{ route('company_circular') }}">Company Circular</a>
                             </li>
-                            <li>
-                                <a href="{{ route('contact-list') }}">Contact List</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
-                            <span class="nav-label">About</span><i class="fa fa-angle-left arrow"></i></a>
-                        <ul class="nav-2-level collapse">
-                            <li>
-                                <a href="{{ route('about') }}">About Form</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('manage-about') }}">Manage</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('blog') }}">Blog</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('manage-blog') }}">Manage</a>
-                            </li>
-                            
                         </ul>
                     </li>
                 </ul>
@@ -115,7 +84,7 @@
         <!-- END SIDEBAR-->
         <div class="content-wrapper">
             <!-- START PAGE CONTENT-->
-            @yield('main_section')
+            @yield('body')
             <!-- END PAGE CONTENT-->
             <footer class="page-footer">
                 <div class="font-13">2024 © <b>Tanimul Islam</b> - Software Engineer</div>

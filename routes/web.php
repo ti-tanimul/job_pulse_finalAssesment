@@ -34,8 +34,8 @@ Route::post('/store-banner',[AdminController::class, 'store_banner'])->name('sto
 Route::get('/job-type',[AdminController::class, 'job_type'])->name('job_type');
 Route::post('/store-category',[AdminController::class, 'store_category'])->name('store_category');
 //--company circular --//
-Route::get('/company-circular',[CompanyController::class, 'company_circular'])->name('company_circular');
-Route::post('/store-circular',[CompanyController::class, 'store_circular'])->name('store_circular');
+// Route::get('/company-circular',[CompanyController::class, 'company_circular'])->name('company_circular');
+// Route::post('/store-circular',[CompanyController::class, 'store_circular'])->name('store_circular');
 //--Contact Controller--//
 Route::get('/contact',[ContactController::class, 'contact'])->name('contact');
 Route::post('/store-contactUs',[ContactController::class, 'contactUs'])->name('contactUs');
@@ -72,3 +72,10 @@ Route::post('/user_register',[UserController::class, 'userRegister'])->name('use
 Route::get('/user-login',[UserController::class, 'login'])->name('user-login');
 Route::post('/user_login',[UserController::class, 'userlogin'])->name('user_login');
 // Route::get('/user-logout',[UserController::class, 'userlogout'])->name('user-logout');
+
+Route::middleware('company')->group(function (){
+    Route::get('/company',[CompanyController::class, 'index'])->name('company');
+    Route::get('/company-home',[CompanyController::class, 'home'])->name('company-home');
+    Route::get('/company-circular',[CompanyController::class, 'company_circular'])->name('company_circular');
+Route::post('/store-circular',[CompanyController::class, 'store_circular'])->name('store_circular');
+});
